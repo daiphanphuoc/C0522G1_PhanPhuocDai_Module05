@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Furama</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!--    <link rel="stylesheet" href="../static/bootstrap413/css/bootstrap.css">-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row p-4 bg-primary text-white text-center " th:fragment="hearder">
+        <div class="col-sm-2">
+            <a class="navbar-brand " href="index.jsp">
+                <img src="https://beedesign.com.vn/wp-content/uploads/2020/08/thiet-ke-logo-chu-b-brew.png"
+                     width="128px"
+                     height="128px">
+            </a>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="card-text">"Đuổi theo đam mê, thành công sẽ đuổi theo bạn"</h3>
+        </div>
+        <div class="col-sm-2">
+            <div class="card text-success bg-primary border border-danger">
+                <div class="card-body text-white">
+                    <h4 class="card-text">C0522G1</h4>
+                    <h5 class="card-text">Phan Phước Đại</h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row sticky-top" th:fragment="navbar"  >
+        <nav class="navbar navbar-expand-lg bg-info text-bg-dark text-danger">
+            <a class="navbar-brand m-1 " style="margin-left: 10%" th:href="@{/}">
+                Trang chủ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto ms-5 mb-lg-0">
+                    <li class="nav-item dropdown m-1 ">
+                        <a class="nav-link  navbar-brand" th:href="@{/final}" role="button"
+                           aria-expanded="false">
+                            Danh sách
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown m-1 ">
+                        <a class="nav-link  navbar-brand" th:href="@{/create}" role="button"
+                           aria-expanded="false">
+                            Thêm mới
+                        </a>
+                    </li>
+                    <!--<li class="nav-item dropdown m-1 ">
+                        <a class="nav-link dropdown-toggle navbar-brand" href="#" role="button"
+                           aria-expanded="false">
+                            Dịch vụ
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown m-1 ">
+                        <a class="nav-link dropdown-toggle navbar-brand" href="#" role="button"
+                           aria-expanded="false">
+                            Hợp đồng
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div th:fragment="left">
+                <div class="row">
+                    <div class="card shadow" style="width: 100%; margin-top: 35px">
+                        <img style="height: 180px"
+                             src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Resort_Gala_Dinner_Gala_Dinner_Latern-Night-1.jpg"
+                             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                        <div class="card-body">
+                            <p style="color: blue;font-size: 20px" class="card-text">Đại tiệc</p>
+                        </div>
+                    </div>
+                </div>
+                <!--            hàng2-->
+                <div style="margin-top: 40px" class="row">
+                    <div class="card shadow" style="width: 100%;">
+                        <img style="height: 180px"
+                             src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
+                             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                        <div class="card-body">
+                            <p style="color: blue;font-size: 20px" class="card-text">Lễ hội</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- hàng 3-->
+                <div class="row">
+                    <div class="card shadow" style="width: 100%;margin-top: 35px">
+                        <img style="height: 180px"
+                             src="http://datphongresort.com/wp-content/uploads/2020/08/Presidential-Suite-M.jpg"
+                             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                        <div class="card-body">
+                            <p style="color: blue;font-size: 20px" class="card-text">Không gian riêng</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- hàng 4-->
+                <div style="margin-top: 40px" class="row">
+                    <div class="card shadow" style="width: 100%;">
+                        <img style="height: 180px"
+                             src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg"
+                             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                        <div class="card-body">
+                            <p style="color: blue;font-size: 20px" class="card-text">Bãi biển</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="row ">
+                <img width="100%" id="img" onclick="changeImage()"
+                     src="https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior_Courtyard-Night.jpg"
+                     alt="">
+            </div>
+            <script>
+                let index = 1;
+                changeImage = function () {
+                    const imgs = ["https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior_Courtyard-Night.jpg",
+                        "https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior-Lobby.jpg",
+                        "https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior-Lagoon-Pool.jpg"];
+                    document.getElementById('img').src = imgs[index];
+                    index++;
+                    if (index == 3) {
+                        index = 0;
+                    }
+                }
+                setInterval(changeImage, 2000);
+            </script>
+        </div>
+    </div>
+    <div class="row">
+        <footer th:fragment="footer">
+            <div style="background: white;height: 40px"></div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                            <span style="color: orange;font-size: 20px">Hướng Dẫn Di Chuyển</span><br>
+                            <p class="text-justify"> Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những
+                                điểm đến hấp dẫn nhất Châu Á. Chỉ cách Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa
+                                Thế giới được UNESCO công nhận:</p>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <a style="font-size: 15px;color: crimson" target="_blank"
+                                   href="https://www.google.com/maps/dir//103+-+105+Vo+Nguyen+Giap+Street,+Khue+My+Ward,+Ngu+Hanh+Son+District,+Danang+City,/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x31420fdbc8cc38ef:0x9a6a3e31121225d2?sa=X&ved=2ahUKEwiKsaaap8b6AhWTc94KHUO2A_0Q9Rd6BAhVEAQ">
+                                    <button class="btn btn-info btn-outline-secondary" style="color: white;font-size: 10px;margin-top: 80px"><span
+                                            class='bi bi-pin-map'></span> XEM BẢN ĐỒ
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-10 img-fluid">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d61350.93697439285!2d108.1780308155661!3d16.042975907568497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d16.05632!2d108.1802752!4m5!1s0x31420fdbc8cc38ef%3A0x9a6a3e31121225d2!2sfurama%20resort!3m2!1d16.0399456!2d108.2510681!5e0!3m2!1svi!2s!4v1664905878931!5m2!1svi!2s"
+                                        width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <ul class="footer-links">
+                            <li><a href="https://furamavietnam.com/vi/furama-resort-danang-rack-rate/" target="_blank">Giá công
+                                bố</a>
+                            </li>
+                            <hr>
+
+                            <li><a href="https://furamavietnam.com/vi/lifestyle-blog/" target="_blank">Lifestyle Blog</a></li>
+
+                            <hr>
+
+                            <li><a href="https://furamavietnam.com/vi/work-with-us/" target="_blank">Tuyển dụng</a></li>
+                            <hr>
+                            <li><a href="https://furamavietnam.com/vi/contact/" target="_blank">Liên hệ</a></li>
+                            <hr>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6 style="color: crimson">Liên hệ</h6>
+                        <ul class="footer-links">
+                            <li><a style="color: blue"
+                                   href="https://www.google.com/maps/dir//103+-+105+Vo+Nguyen+Giap+Street,+Khue+My+Ward,
+                           +Ngu+Hanh+Son+District,+Danang+City,/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x31420fdbc8cc38ef:
+                           0x9a6a3e31121225d2?sa=X&ved=2ahUKEwiKsaaap8b6AhWTc94KHUO2A_0Q9Rd6BAhVEAQ">
+                                <span class='bi bi-pin-map'></span> <span>103 - 105 Vo Nguyen Giap Street, Khue My Ward,
+                        Ngu Hanh Son District, Danang City, Vietnam
+                        </span>
+                            </a></li>
+                            <hr>
+                            <li><a href="http://scanfcode.com/contact/" style="color: blue">
+                                Tel.: 84-97111-8171/888 * Fax: 84-236-3847 666</a></li>
+                            <hr>
+                            <li><a href="mailto: phamdat.qn@gmail.com" style="color: blue">
+                                Email: furama.dn@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <p class="copyright-text" style="text-align: center">Copyright &copy; 2017 All Rights Reserved
+                            by Furama
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div th:fragment="phone" class=" row hotline-phone-ring-wrap">
+        <div class="hotline-phone-ring">
+            <div class="hotline-phone-ring-circle"></div>
+            <div class="hotline-phone-ring-circle-fill"></div>
+            <div class="hotline-phone-ring-img-circle">
+                <a href="tel:0971118171" class="pps-btn-img">
+                    <img src="https://nguyenhung.net/wp-content/uploads/2019/05/icon-call-nh.png" alt="Gọi điện thoại"
+                         width="50">
+                </a>
+            </div>
+        </div>
+        <div class="hotline-bar">
+            <a href="tel:0971118171">
+                <span class="text-hotline">097111.8171</span>
+            </a>
+        </div>
+    </div>
+
+    <div th:fragment="gotop">
+        <button id="myBtn" title="Lên đầu trang" class="btn btn-secondary btn-outline-warning">
+            <span class='bi bi-arrow-up-circle' style="font-size: 30px"></span>
+        </button>
+        <script>
+            window.onscroll = function () {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+
+            document.getElementById('myBtn').addEventListener("click", function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            });
+        </script>
+    </div>
+</div>
+</div>
+</body>
+</html>

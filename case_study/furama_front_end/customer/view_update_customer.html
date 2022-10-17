@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+
+        $(function () {
+            $("#head").load("../util/head.html");
+            $("#navbar").load("../util/navbar.html");
+            $("#right").load("../util/right.html");
+            $("#footer").load("../util/footer.html");
+            // $("#list").load("list_customer.html");
+        });
+        /*$(function () {
+            var includes = $('[data-include]');
+            jQuery.each(includes, function () {
+                var file = 'util/' + $(this).data('include') + '.html';
+                $(this).load(file);
+            });
+        });*/
+    </script>
+    <style>
+        body {
+            position: relative;
+        }
+
+        .right{
+            /*margin-right: 0px;*/
+            position: sticky;
+            height: 100%;
+            background-color: snow;
+            overflow: hidden;
+        }
+        .right:hover{
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div class="container" flagment="header">
+    <!--    header-->
+    <div class="row">
+        <div id="head"></div>
+    </div>
+    <!--    navbar-->
+    <div class="row sticky-top" id="navbar"></div>
+
+    <div class="row d-flex" id="list">
+        <div class="row">
+            <h3 class="text-center">Cập nhật khách hàng</h3>
+            <div class="d-flex justify-content-center">
+                <form class="w-50 border border-2 border-success p-3 rounded"
+                      action="/customer/update"
+                      object="${customerDto}" method="POST" novalidate="novalidate">
+                    <input hidden id="idUpdate" name="id" value="*{id}">
+                    <div class="form-group">
+                        <label for="nameUpdate" class="h6">Tên khách hàng:</label>
+<!--                        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>-->
+                        <div class="input-group">
+
+                            <input type="text" id="nameUpdate" class="form-control"
+                                   placeholder="Nhập tên khách hàng.."
+                                  value="*{name}"/>
+                            <span class="input-group-text"><i
+                                    class="fa-solid fa-person-circle-question"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label for="dateOfBirthUpdate" class="h6">Ngày sinh:</label>
+                        <!--<p style="color: red" th:if="${#fields.hasErrors('birthday')}"
+                           th:errors="*{birthday}"></p>-->
+                        <input type="date" id="dateOfBirthUpdate" class="form-control" value="*{birthday}"
+                              />
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label class="h6">Giới tính:</label>
+                      <!--  <p style="color: red" th:if="${#fields.hasErrors('sex')}"
+                           th:errors="*{sex}"></p>-->
+                    </div>
+                    <div class="d-flex">
+                        <label class="d-block me-4">
+                            <input type="radio" th:field="*{sex}" th:value="1"/> Nam
+                            <i class="fa-solid fa-mars"></i>
+                        </label>
+
+                        <label class="d-block me-4">
+                            <input type="radio" th:field="*{sex}" th:value="0"/> Nữ
+                            <i class="fa-solid fa-venus"></i>
+                        </label>
+
+
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label for="idCardUpdate" class="h6">Số CMND/CCCD:</label>
+                        <!--<p style="color: red" th:if="${#fields.hasErrors('idCitizen')}"
+                           th:errors="*{idCitizen}"></p>
+                        <p style="color: red" th:if="${duplicateIdCitizen}"
+                           th:text="${duplicateIdCitizen}"></p>-->
+                        <div class="input-group">
+                            <input type="text" id="idCardUpdate" class="form-control"
+                                   placeholder="Nhập số CMND/CCCD.."
+                                   value="*{idCitizen}"/>
+                            <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label for="phoneUpdate" class="h6">Số điện thoại:</label>
+                        <!--<p style="color: red" th:if="${#fields.hasErrors('phone')}"
+                           th:errors="*{phone}"></p>-->
+                        <div class="input-group">
+                            <input type="text" id="phoneUpdate" class="form-control" placeholder="Nhập SĐT.."
+                                   value="*{phone}"/>
+                            <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label for="emailUpdate" class="h6">Email:</label>
+                      <!--  <p style="color: red" th:if="${#fields.hasErrors('email')}"
+                           th:errors="*{email}"></p>-->
+                        <div class="input-group">
+                            <input type="text" id="emailUpdate" class="form-control" placeholder="Nhập email.."
+                                  value="*{email}"/>
+                            <span class="input-group-text"><i
+                                    class="fa-solid fa-envelope-circle-check"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label for="addressUpdate" class="h6">Địa chỉ:</label>
+                       <!-- <p style="color: red" th:if="${#fields.hasErrors('address')}"
+                           th:errors="*{address}"></p>-->
+                        <div class="input-group">
+                            <input type="text" id="addressUpdate" class="form-control"
+                                   placeholder="Nhập địa chỉ.."/>
+                            <span class="input-group-text"><i
+                                    class="fa-solid fa-map-location-dot"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 form-group">
+                        <label class="h6" for="customerTypeUpdate">Loại khách:</label>
+                        <div class="input-group">
+                            <select id="customerTypeUpdate" class="form-select" >
+                                <option>Member</option>
+                                <option>Siver</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-center">
+                        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+                            Lưu <i class="fa-solid fa-floppy-disk"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row" id="footer"></div>
+</div>
+
+</body>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+</html>

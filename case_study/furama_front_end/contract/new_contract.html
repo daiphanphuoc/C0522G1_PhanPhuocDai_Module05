@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded formCSS"
+          action="/contract/create"
+          th:object="${contractDto}" method="POST" novalidate="novalidate">
+        <div class="form-group">
+            <label for="nameNew" class="h6">Khách hàng:</label>
+            <div class="input-group">
+                <select id="nameNew" class="form-select"
+                        placeholder="Nhập tên khách hàng.."
+                        th:field="*{customer}">
+                    <option th:each="customer:${customers}" th:text="${customer.name}"
+                            th:value="${customer.id}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nameEmployee" class="h6">Nhân viên:</label>
+            <div class="input-group">
+                <select id="nameEmployee" class="form-select"
+                        th:field="*{employee}">
+                    <option th:each="employee:${employees}" th:text="${employee.name}"
+                            th:value="${employee.id}"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nameFacility" class="h6">Dịch vụ:</label>
+            <div class="input-group">
+                <select id="nameFacility" class="form-select"
+                        th:field="*{facility}">
+                    <option th:each="facility:${facilities}" th:text="${facility.name}"
+                            th:value="${facility.id}"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mt-3 form-group">
+            <label for="dateStart" class="h6">Ngày bắt đầu:</label>
+            <input type="date" id="dateStart" class="form-control" th:field="*{start}"/>
+        </div>
+        <div class="mt-3 form-group">
+            <label for="dateEnd" class="h6">Ngày kết thúc:</label>
+            <input type="date" id="dateEnd" class="form-control" th:field="*{end}"/>
+        </div>
+
+        <div class="mt-3 text-center">
+            <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+                Lưu <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+        </div>
+    </form>
+</div>

@@ -72,7 +72,7 @@
                 <fieldset class="col-8">
                     <form class="d-flex justify-content-center" role="search" action="/customer" method="get">
                         <input hidden type="text" name="action" value="search">
-                        <input class="form-control me-2" type="search" name="searchName" th:value="${searchName}"
+                        <input class="form-control me-2" type="search" name="searchName" [value]="searchName"
                                placeholder="Nhập tên khách hàng">
                         <input class="form-control me-2" type="search" name="searchAddress" th:value="${searchAddress}"
                                placeholder="Nhập địa chỉ">

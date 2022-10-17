@@ -1,0 +1,15 @@
+<div class="container">
+  <h3 class="text-center">Calculator Basic</h3>
+  <div class="m-3"><label>First Number:</label></div>
+  <div class="m-3"><input class="form-control" type="number" [(ngModel)]="firstNumber"></div>
+
+  <div class="m-3"><label>Second Number:</label></div>
+  <div class="m-3"><input class="form-control" type="number" [(ngModel)]="secondNumber"></div>
+  <div class="m-3">
+    <input class="btn btn-primary  mx-5"  type = button value="+" (click)="sumTwoNumber()">
+    <input  class="btn btn-primary mx-5"  type = button value="-" (click)="subtractionTwoNumber()">
+    <input  class="btn btn-primary mx-5"  type = button value="*" (click)="multiplicationTwoNumber()">
+    <input  class="btn btn-primary mx-5"  type = button value="/" (click)="divisionTwoNumber()">
+  </div>
+  <div class="m-3 text-danger"><p >{{result}}</p></div>
+</div>

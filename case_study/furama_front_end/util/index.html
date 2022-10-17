@@ -7,6 +7,7 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
             integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
@@ -27,18 +28,22 @@
         });*/
     </script>
     <style>
+        a{
+            text-decoration: none;
+        }
         body {
             position: relative;
         }
 
-        .right{
+        .right {
             /*margin-right: 0px;*/
             position: sticky;
             height: 100%;
             background-color: snow;
             overflow: hidden;
         }
-        .right:hover{
+
+        .right:hover {
             overflow: scroll;
         }
     </style>
@@ -46,9 +51,7 @@
 <body>
 <div class="container" flagment="header">
     <!--    header-->
-    <div class="row">
-        <div id="head"></div>
-    </div>
+    <div class="row" id="head"></div>
     <!--    navbar-->
     <div class="row sticky-top" id="navbar"></div>
     <div class="row" style="height: 600px;margin-top: 40px">
@@ -79,9 +82,7 @@
         </div>
 
     </div>
-    <div class="row d-flex" id="list">
-
-    </div>
+    <div class="row d-flex" id="list"></div>
     <div class="row" id="footer"></div>
 </div>
 

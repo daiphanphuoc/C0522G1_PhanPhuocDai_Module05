@@ -1,0 +1,91 @@
+<div class="form" [formGroup]='registerForm'>
+  <h3>Đăng ký</h3>
+  <div>
+    <label class="form-label">Nhập email:</label>
+    <input type="text" class="form-control" formControlName="email">
+  </div>
+  <p style="color: red" *ngIf="registerForm.controls.email.hasError('required')&& registerForm.controls.email.dirty">
+    Không được để trống</p>
+  <p style="color: red" *ngIf="registerForm.controls.email.hasError('email')&& registerForm.controls.email.dirty">
+    Nhập không đúng định dạng</p>
+
+  <div formGroupName="passwordGroup">
+
+    <div>
+      <label class="form-label">Nhập mật khẩu :</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+    <p style="color: red"
+       *ngIf="registerForm.get('passwordGroup').hasError('required','password')&&
+      registerForm.get('passwordGroup').get('password').dirty">
+      Mật khẩu không được để trống</p>
+    <p style="color: red"
+       *ngIf="registerForm.get('passwordGroup').hasError('minlength','password')&&
+          registerForm.get('passwordGroup').get('password').dirty">
+      Nhập tối thiểu 6 ký tự</p>
+
+    <div>
+      <label class="form-label">Xác nhận lại mật khẩu :</label>
+      <input type="password"  class="form-control" formControlName="confirmPassword">
+    </div>
+    <p style="color: red"
+       *ngIf="registerForm.get('passwordGroup').hasError('required','confirmPassword')&&
+          registerForm.get('passwordGroup').get('confirmPassword').dirty">
+      Mật khẩu không được để trống</p>
+    <p style="color: red"
+       *ngIf="registerForm.get('passwordGroup').hasError('minlength','confirmPassword')&&
+          registerForm.get('passwordGroup').get('confirmPassword').dirty">
+      Nhập tối thiểu 6 ký tự</p>
+
+    <p style="color: red"
+       *ngIf="registerForm.get('passwordGroup').hasError('checkPass')&&
+          registerForm.get('passwordGroup').get('confirmPassword').dirty">
+      Password
+      không khớp</p>
+  </div>
+
+  <div>
+    <label class="form-label">Nhập quốc gia :</label>
+    <select type="text" class="form-select" value="" formControlName="country">
+      <option value="Việt Nam">Việt Nam</option>
+      <option value="Lào">Lào</option>
+      <option value="Mỹ">Mỹ</option>
+      <option value="Pháp">Pháp</option>
+    </select>
+  </div>
+  <p style="color: red"
+     *ngIf="registerForm.controls.country.hasError('required') && registerForm.controls.country.dirty">
+    Không được để trống
+  </p>
+
+  <div>
+    <label class="form-label">Nhập tuổi :</label>
+    <input type="number" class="form-control" formControlName="age">
+  </div>
+  <p style="color: red" *ngIf="registerForm.controls.age.hasError('required') && registerForm.controls.age.dirty">
+    Không được để trống
+  </p>
+  <p style="color: red" *ngIf="registerForm.controls.age.hasError('min') && registerForm.controls.age.dirty">
+    Phải lớn hơn 18
+  </p>
+
+  <div>
+    <label class="form-label">Nhập giới tính :</label>
+    <input type="radio" value="1" formControlName="gender"><span>Nam</span>
+    <input type="radio" value="0" formControlName="gender"><span>Nữ</span>
+  </div>
+  <p style="color: red" *ngIf="registerForm.controls.gender.hasError('required') && registerForm.controls.gender.dirty">
+    Không được để trống
+  </p>
+
+  <div>
+    <label class="form-label">Nhập số điện thoại :</label>
+    <input type="text" class="form-control" formControlName="phone">
+  </div>
+  <p style="color: red" *ngIf="registerForm.controls.phone.hasError('required') && registerForm.controls.phone.touched">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="registerForm.controls.phone.hasError('pattern') && registerForm.controls.phone.dirty">Không đúng định
+    dạng</p>
+
+  <button class="btn btn-primary" [disabled]="registerForm.invalid" (click)="getValueForm()">Đăng ký</button>
+</div>

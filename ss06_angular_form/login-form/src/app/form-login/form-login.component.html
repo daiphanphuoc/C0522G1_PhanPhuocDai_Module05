@@ -15,7 +15,7 @@
     <div>
       <input class="form-control" type="password" placeholder="Password" name="password" formControlName="password">
       <p class="text-danger" *ngIf="formLogin.controls['password'].hasError('required')&& formLogin.touched ">Không Được để trống</p>
-      <p class="text-danger" *ngIf="formLogin.controls['password'].hasError('minlength')">Password ít nhất là 6 ký </p>
+      <p class="text-danger" *ngIf="formLogin.controls.password.hasError('minlength')">Password ít nhất là 6 ký </p>
     </div>
   </div>
   <br>

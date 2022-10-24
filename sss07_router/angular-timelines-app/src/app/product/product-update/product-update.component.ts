@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from '../../service/product.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
@@ -19,11 +19,12 @@ export class ProductUpdateComponent implements OnInit {
       this.id = +paramMap.get('id');
       const product = this.getProduct(this.id);
       this.productForm = new FormGroup({
-        id: new FormControl(product.id),
-        name: new FormControl(product.name),
-        price: new FormControl(product.price),
-        description: new FormControl(product.description),
+        id: new FormControl(''),
+        name: new FormControl(''),
+        price: new FormControl(''),
+        description: new FormControl(''),
       });
+      this.productForm.setValue(product);
     });
   }
 

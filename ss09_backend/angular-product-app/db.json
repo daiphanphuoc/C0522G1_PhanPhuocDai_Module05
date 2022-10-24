@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "Huy",
+      "price": "222222",
+      "description": "tinh",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 1
+    },
+    {
+      "name": "rrrrrrrrrrrrrr",
+      "price": 3333333333,
+      "description": "eeeeeeeeeeeee",
+      "category": {
+        "id": null
+      },
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "some comment"
+    }
+  ]
+}

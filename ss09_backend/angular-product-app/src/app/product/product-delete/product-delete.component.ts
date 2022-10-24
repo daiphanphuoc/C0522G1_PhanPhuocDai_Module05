@@ -10,7 +10,13 @@ import {ProductService} from '../../service/product.service';
 })
 export class ProductDeleteComponent implements OnInit {
 
-  productForm: FormGroup;
+  productForm: FormGroup  = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+    category: new FormControl()
+  });
   id: number;
 
   constructor(private productService: ProductService,
@@ -27,12 +33,8 @@ export class ProductDeleteComponent implements OnInit {
 
   getProduct(id: number) {
     return this.productService.findById(id).subscribe(product => {
-      this.productForm = new FormGroup({
-        name: new FormControl(product.name),
-        price: new FormControl(product.price),
-        description: new FormControl(product.description),
-        category: new FormControl(product.category.id)
-      });
+      this.productForm.patchValue(product);
+      this.productForm.controls.category.setValue(product.category.name);
     });
   }
 

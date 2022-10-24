@@ -29,9 +29,6 @@ export class ProductCreateComponent implements OnInit {
 
   submit() {
     const product = this.productForm.value;
-    product.category = {
-      id: product.category
-    };
     this.productService.saveProduct(product).subscribe(() => {
       alert('Tạo thành công');
       this.productForm.reset();

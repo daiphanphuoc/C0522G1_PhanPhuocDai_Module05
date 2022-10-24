@@ -18,6 +18,14 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
+      <td>Loại sản phẩm</td>
+      <td>
+        <select formControlName="category" [compareWith]="compareWithId">
+          <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <td></td>
       <td><button (click)="updateProduct(id)">Cập nhật</button></td>
     </tr>

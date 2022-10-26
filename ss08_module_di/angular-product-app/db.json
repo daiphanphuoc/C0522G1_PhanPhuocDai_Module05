@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "name": "some com",
+      "price": "222222",
+      "description": "tinh",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 1
+    },
+    {
+      "name": "rrrrrrrrrrrrrr",
+      "price": 3333333333,
+      "description": "gdsfgjjkjdg",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 2
+    },
+    {
+      "name": "ef",
+      "price": 24234,
+      "description": "24rfdfsa",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 3
+    },
+    {
+      "name": "rewqwwe",
+      "price": 4213,
+      "description": "4wew",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "some comment"
+    }
+  ]
+}

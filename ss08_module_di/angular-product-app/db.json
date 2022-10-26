@@ -39,12 +39,34 @@
         "name": "some comment"
       },
       "id": 4
+    },
+    {
+      "name": "rw",
+      "price": 242,
+      "description": "rưergergew",
+      "category": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "id": 5
     }
   ],
   "categories": [
     {
       "id": 1,
       "name": "some comment"
+    },
+    {
+      "name": "1231231",
+      "id": 2
+    },
+    {
+      "name": "321321",
+      "id": 3
+    },
+    {
+      "name": "đấ",
+      "id": 4
     }
   ]
 }

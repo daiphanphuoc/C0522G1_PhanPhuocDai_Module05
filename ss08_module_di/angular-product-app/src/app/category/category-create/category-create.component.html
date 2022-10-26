@@ -1,6 +1,6 @@
 
 <h1>Tạo danh mục mới</h1>
-<form [formGroup]="categoryForm" (ngSubmit)="submit()">
+<div [formGroup]="categoryForm">
   <table>
     <tr>
       <td>Tên danh mục:</td>
@@ -9,8 +9,8 @@
     <tr>
       <td></td>
       <td>
-        <button>Tạo mới</button>
+        <button (click)="submit()">Tạo mới</button>
       </td>
     </tr>
   </table>
-</form>
+</div>

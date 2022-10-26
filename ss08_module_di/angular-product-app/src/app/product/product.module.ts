@@ -1,12 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ProductListComponent} from './product-list/product-list.component';
+import {ProductCreateComponent} from './product-create/product-create.component';
+import {ProductUpdateComponent} from './product-update/product-update.component';
+import {ProductDeleteComponent} from './product-delete/product-delete.component';
+import {ProductRoutingModule} from './product-routing.module';
+import {RouterModule} from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent,
+    ProductDeleteComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProductRoutingModule,
+    ReactiveFormsModule
   ]
 })
-export class ProductModule { }
+export class ProductModule {
+}

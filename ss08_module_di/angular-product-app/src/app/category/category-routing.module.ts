@@ -8,7 +8,7 @@ import {CategoryListComponent} from './category-list/category-list.component';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: CategoryListComponent
   },
   {

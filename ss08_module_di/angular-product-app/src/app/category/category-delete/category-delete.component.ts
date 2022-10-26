@@ -40,4 +40,5 @@ export class CategoryDeleteComponent implements OnInit {
       console.log(e);
     });
   }
-}
+
+ }

@@ -1,5 +1,5 @@
-<h1>Cập nhật thông tin danh mục sản phẩm</h1>
-<form [formGroup]="categoryForm" (ngSubmit)="updateCategory(id)">
+<h1>Xoá danh mục sản phẩm</h1>
+<div [formGroup]="categoryForm" *ngIf="categoryForm != undefined">
   <table>
     <tr>
       <td>Tên danh mục:</td>
@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><button>Cập nhật</button></td>
+      <td><button (click)="deleteCategory(id)" >Xoá</button></td>
     </tr>
   </table>
-</form>
+</div>

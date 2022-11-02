@@ -1,0 +1,36 @@
+<div class="row sticky-top">
+  <nav class="navbar navbar-expand-lg bg-info text-bg-dark text-danger">
+    <a class="navbar-brand" style="margin-left: 15%" routerLink="/">
+      Trang chủ
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto ms-5 mb-lg-0">
+        <li class="nav-item dropdown m-1 ">
+          <a class="nav-link dropdown-toggle navbar-brand" routerLink="/tietkiem" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Sổ tiết kiệm
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/tietkiem">Danh sách sổ tiết kiệm</a></li>
+            <li><a class="dropdown-item" routerLink="/tietkiem/taomoi">Thêm mới sổ tiết kiệm</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown m-1 ">
+          <a class="nav-link dropdown-toggle navbar-brand" routerLink="/customer" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Khách hàng
+          </a>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" routerLink="/customer">Danh sách khách hàng</a></li>
+            <li><a class="dropdown-item" routerLink="/customer/create">Thêm mới khách hàng</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
